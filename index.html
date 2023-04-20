@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+   
+    <title>Car Sale</title>
+</head>
+<body class="conteudo">
+    <header class="cabecalho">
+        <img class="logo" src="/assets/logo.png" alt="logo" width="120px">
+        <input type="checkbox" id="menu" class="container__botao">
+        <label for="menu">
+        <img  class="hamburguer" style="width:50px" src="/assets/menuhamburguer.png" alt="hamburguer">
+        </label>
+        <ul class="cabecalho__menu">
+            <li class="cabecalho__links"><a class="cabecalho__menu__links" href="/">HOME</a></li>
+            <li class="cabecalho__links"><a class="cabecalho__menu__links">DOWLOAD CATÁLOGO</a></li>
+            <li class="cabecalho__links"><a class="cabecalho__menu__links" href="cadastro">CADASTRO</a></li>
+        </ul>
+        <div class="barra__pesquisa">
+            <form action="/info" method="get">
+              <div class="input-group">
+                <input type="text" name="searchTerm" id="textBusca" placeholder="Buscar...">
+                <button type="submit" class="btn" style="background-image: url('/assets/researchicon.png');"></button>
+              </div>
+            </form>
+          </div>
+    </header>
+    <main>
+        <div class="animacao__homepage">
+            <video autoplay loop muted class="animacao__video">
+                <source class="video__bruto" src="/assets/car_video.mp4">
+            </video>
+                <div class="animacao__homepage__button">
+                    <h1 class="animacao__homepage__texto">TORNE SEU SONHO REALIDADE</h1>
+                    <div class="animacao__homepage__acesso">
+                        <a href="/store" class="animacao__homepage__link">GARANTA O SEU</a>
+                    </div>
+                </div>
+        </div>
+        <section style="height: 50px;"></section>
+        <h2 class="subtitulo">CONFIRA AS OFERTAS DO DIA</h2>
+        <section style="height: 50px;"></section>
+    </main>
+
+       <main>
+            <div class="linha__1">
+                <div class="carro__1">
+                  <img class="carro" src="/assets/carro3.jpg" alt="carro1">
+                  <div class="nome">
+                    <a href="/info?searchTerm=Fusca" class="nome__carro">Fusca</a>
+                  </div>    
+                </div>
+                <div class="carro__1">
+                  <img class="carro" src="/assets/carro1.webp" alt="carro2">
+                  <div><a href="/info?searchTerm=Chevette" class="nome__carro">Chevette</div></a>
+                  </div> 
+                <div class="carro__1">
+                <img class="carro" src="/assets/carro5.jpg" alt="carro1">
+                <div class="nome">
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div>    
+              </div>
+            <div class="carro__1">
+                <img class="carro" src="/assets/carro12.jpg" alt="carro1">
+                <div class="nome">
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div>    
+            </div>
+            <div class="carro__1">
+                <img class="carro" src="/assets/carro6.jpg" alt="carro2">
+                <div>
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div> 
+            </div>
+            <div class="carro__1">
+                <img class="carro" src="/assets/carro32.jpg" alt="carro">
+                <div>
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div> 
+            </div>
+            <div class="carro__1">
+                <img class="carro" src="/assets/carro69.webp" alt="carro1">
+                <div class="nome">
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div>    
+            </div>
+            <div class="carro__1">
+                <img class="carro" src="/assets/carro10.jpg" alt="carro2">
+                <div>
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div> 
+            </div>
+            <div class="carro__1">
+                <img class="carro" src="/assets/carro56.jpg" alt="carro3">
+                <div>
+                    <a href="./info" class="nome__carro">Nome do Carro</a>
+                </div> 
+            </div>
+        </div>
+        <section style="height: 50px;"></section>
+    </main>
+   
+    <footer class="rodape">
+        <div>
+            <p class="rodape__titulo">REDES SOCIAIS</p>
+            <a class="rodape__redes" href="https://www.instagram.com/">
+            <img src="./assets/instagramlogo.png" alt="instagramlogo" width="27px"> Instagram
+            </a>
+            <a class="rodape__redes" href="https://twitter.com/home?lang=pt">
+            <img src="./assets/twitterlogo.png" alt="twitterlogo" width="27px"> Twitter
+            </a>
+            <a class="rodape__redes" href="https://www.tiktok.com/pt-BR"> <img class="rodape__redes__imagem" alt="tiktoklogo" src="./assets/tiktoklogo.png" width="27px"> Tiktok
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    let prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+  const currentScrollPos = window.pageYOffset;
+  
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector('.cabecalho').classList.remove('hidden');
+  } else {
+    document.querySelector('.cabecalho').classList.add('hidden');
+  }
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector('.cabecalho__menu').classList.remove('hidden');
+  } else {
+    document.querySelector('.cabecalho__menu').classList.add('hidden');
+  }
+  
+  prevScrollpos = currentScrollPos;
+}
+const hamburguerBtn = document.querySelector('.hamburguer-btn');
+
+hamburguerBtn.addEventListener('click', () => {
+    hamburguerBtn.classList.toggle('active');
+});
+
+</script>
+

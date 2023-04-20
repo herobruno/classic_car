@@ -1,0 +1,4 @@
+INSERT INTO user (email,password) VALUES (
+    "verasouza14@gmail.com",
+    "02133847",
+);

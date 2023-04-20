@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Syncopate:wght@400;700&display=swap');
+
+/*Aqui meche com todo o body da página*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/*Aqui é o cabeçalho da página*/
+
+.cabecalho{
+    background-color: rgb(212, 0, 0);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+  }
+  .logo{
+    margin-left: 50px;
+    width: 6rem;
+  }
+  .cabecalho__menu{
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 24px 0px 24px 0px;
+  }
+  .container__botao:checked~.cabecalho__menu{
+    display:block;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    top: 83%;
+    background-color: #fb0000;
+  }
+  .container__botao{
+    display:none;
+  }
+  .cabecalho__links{
+    padding: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .cabecalho__menu__links{
+    padding: 2% 10% 2% 10%;
+    color: rgb(255, 255, 255);
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+  }
+  .barra__pesquisa{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 2%;
+  }
+  .caixa__pesquisa{
+    background-color: #ff5151;
+    color: #ffffff;
+    opacity: 80%;
+    height: 20px;
+    border: 2px solid  #ff5151;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .pesquisa__icone{
+    width: 3rem;
+  }
+  
+
+/* Aqui é o conteúdo da página*/
+
+.centro__info img {
+    width: 100%;
+  }
+.imagem__info{
+    width:100%;
+    overflow: hidden;
+    position: relative;
+}
+.centro__texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    bottom: 0%;
+    font-family: 'Syncopate', 'sans serif';
+    z-index: 1;
+    color: #000000;
+    font-size: 2rem;
+}
+.info__corpo__escrita{
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    font-family: 'Montserrat', sans-serif;
+    width: 50%;
+}
+
+.main__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: -159px;
+}
+.main__paragraphs{
+    width: 50%;
+    padding-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 30px;
+}
+.caixa__whatsapp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    justify-content: end;
+    position:fixed;
+    bottom: 7%;
+    right: 1%;
+
+}
+.whatsapp{
+    font-size: 1.7rem;
+    color: #ffffff;
+    background-color: #020201;
+    width: 20%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 30px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 45px;
+    position: fixed;
+}
+
+/* Aqui é o rodapé da página*/
+
+.rodape{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0%;
+    left: 0%;
+    padding: 2%;
+    z-index: 2;
+}
+.rodape__login{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(54, 54, 54);
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    bottom: 0%;
+    left: 0%;
+    padding: 2%;
+    position: fixed;
+    bottom: 0%;
+    top: 80%;
+    z-index: 2;
+}
+.rodape__titulo{
+    font-weight: 700;
+}
+.rodape__redes{
+    padding: 10px;
+    font-size: 0.75rem;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: beige;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+}
+.rodape__redes__imagem{
+    max-width: 27px;
+}
+.caixa__whatsapp img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 10px; /* ajuste essa propriedade para a posição desejada */
+    transform: translateY(-50%);
+    padding: 1px;
+  }
+  h4{
+    color: grey;
+  }
+ 
+
+  .icone__whatsapp{
+    width: 50px;
+    left: 40px;
+}
+.interior__whatsapp{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(255, 12, 12);
+    padding: 1px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cabecalho.hidden {
+    transform: translateY(-100%);
+  }
+ .bloco{
+    display: flex;
+    padding-top: 0%;
+    padding-left: 1%;
+    padding-right: 1%;
+    flex-direction: column;
+    align-items: center;
+ }
+.linha{
+    background-color: #5e5e5e;
+    border: #5e5e5e;
+    padding: 0%;
+}
+ .barra_de_detalhes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-left: 28%;
+    margin-right: 28%;
+    margin-top: -200px;
+    
+}
+.texto__rapido1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: rgb(82, 82, 82);
+    font-weight: 600;
+    margin: 0%;
+}
+.texto__rapido2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+  }
+  
+  /* Estilo do campo de entrada de pesquisa */
+  #textBusca {
+    flex: 1;
+    border: none;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  /* Estilo do botão de pesquisa */
+  .btn {
+    background-color: #fb0000;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+  
+  /* Imagem de fundo do botão de pesquisa */
+  .btn {
+    background-image: url('./assets/researchicon.png');
+    background-position: center;
+    background-size: 60%;
+  }
+
+  
+  @media (min-width: 1200px){
+
+    .hamburguer{
+    display:none;
+    opacity: 0%;
+  }
+  .cabecalho__menu{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 15%;
+    margin-left: 15%;
+    padding: 10%;
+    position: inherit;
+  }
+  .cabecalho__links{
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+  }
+  }
+  @media (max-width: 465px){
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        border: 2px solid #ccc;
+        border-radius: 20px;
+        background-color: #f5f5f5;
+        padding: 5px 10px;
+        height: 80%;
+        width: 60%;
+      }
+    .btn{
+      display: none;
+    }
+    .animacao__homepage__texto {
+      font-size: 2rem;
+    }
+    }
+@media (max-width: 1150px){
+  .centro__texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    bottom: 0%;
+    font-family: 'Syncopate', 'sans serif';
+    z-index: 1;
+    color: #000000;
+    font-size: 1.5rem;
+    margin-top: 70px;
+  }
+  .barra_de_detalhes{
+    z-index: 1;
+    margin-top: 1%;
+  }
+.espaco{
+display: none;
+}
+}
+
+@media (max-width: 860px){
+  .centro__texto{
+    font-size: 1.1rem;
+    text-align: center;
+  }
+.linha{
+  display: none;
+}
+.barra_de_detalhes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.caixa__whatsapp{
+  display: none;
+}
+.caixa__whatsapp__icone{
+  max-width: 100%;
+    height: auto;
+    display: block;
+    position: fixed;
+    z-index: 2;
+    bottom: 20%;
+    right: 50px;
+    transform: translateY(-50%);
+}
+.icone__whatsapp{
+  height: 120px;
+  width: auto;
+  bottom: 0%;
+  right: 0%;
+}
+.whatsapp{
+  font-size: 1.7rem;
+  color: #ffffff;
+  background-color: #020201;
+  width: 20%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 30px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 45px;
+  position: fixed;
+}
+}

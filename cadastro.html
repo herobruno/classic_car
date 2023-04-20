@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro</title>
+</head>
+<body class="corpo" >
+  <header class="cabecalho">
+    <img class="logo" src="/assets/logo.png" alt="logo" width="120px">
+    <input type="checkbox" id="menu" class="container__botao">
+    <label for="menu">
+      <div class="menu__haburguer">
+        <img  class="hamburguer" style="width:50px" src="/assets/menuhamburguer.png" alt="hamburguer">
+      </div>
+    </label>
+    <ul class="cabecalho__menu">
+        <li class="cabecalho__links"><a class="cabecalho__menu__links" href="/">HOME</a></li>
+        <li class="cabecalho__links"><a class="cabecalho__menu__links">DOWLOAD CATÁLOGO</a></li>
+        <li class="cabecalho__links"><a class="cabecalho__menu__links" href="cadastro">CADASTRO</a></li>
+    </ul>
+</header>
+    <main>
+        <section>
+          <form action="/processar" method="post">
+            
+            <div class="centro__login">
+              <div class="botoes__cadastro">
+                <h1 class="email">
+                  EMAIL
+                </h1>
+                <input class="caixa__de__login" type="email" name="email" value="" size="40" required> 
+                <h1 class="senha">
+                  SENHA
+                </h1>
+                <input class="caixa__de__login" type="password" name="password" value="" size="40" required>
+                
+                
+          
+                <div class="cadastro__login">
+                  <button type="submit" name="action" value="login">
+                    LOGIN
+                  </button>
+          
+                  <button type="submit" name="action" value="register">
+                    REGISTRAR
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </main> 
+   
+ 
+    <footer class="rodape__login">
+        <div>
+            <p class="rodape__titulo">REDES SOCIAIS</p>
+            <a class="rodape__redes" href="https://www.instagram.com/">
+            <img src="./assets/instagramlogo.png" alt="instagramlogo" width="27px"> Instagram
+            </a>
+            <a class="rodape__redes" href="https://twitter.com/home?lang=pt">
+            <img src="./assets/twitterlogo.png" alt="twitterlogo" width="27px"> Twitter
+            </a>
+            <a class="rodape__redes" href="https://www.tiktok.com/pt-BR"> <img class="rodape__redes__imagem" alt="tiktoklogo" src="./assets/tiktoklogo.png" width="27px"> Tiktok
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+  let prevScrollpos = window.pageYOffset;
+
+window.onscroll = function() {
+const currentScrollPos = window.pageYOffset;
+
+if (prevScrollpos > currentScrollPos) {
+  document.querySelector('.cabecalho').classList.remove('hidden');
+} else {
+  document.querySelector('.cabecalho').classList.add('hidden');
+}
+
+prevScrollpos = currentScrollPos;
+}
+
+</script>
