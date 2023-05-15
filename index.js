@@ -13,6 +13,17 @@ const Carro = require('./poo.js');
 const ejs = require('ejs');
 const fs = require('fs');
 
+
+ejs.renderFile('info.ejs', { carro: carroEncontrado }, {}, (err, str) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  fs.writeFileSync('info.html', str);
+  console.log('Arquivo HTML gerado com sucesso!');
+});
+
 // Dados do carro
 const carro = new Carro('Marca', 'preco', 'localizacao', 'descricao,imagem');
 
