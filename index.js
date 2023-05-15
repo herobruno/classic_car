@@ -12,6 +12,16 @@ const Carro = require('./poo.js');
 
 const ejs = require('ejs');
 const fs = require('fs');
+app.get('/info', (req, res) => {
+  // Lógica para buscar o carro com base no searchTerm
+  // ...
+
+  if (carroEncontrado) {
+    res.render('info', { carro: carroEncontrado });  // Renderiza o template info.ejs com o objeto carroEncontrado
+  } else {
+    res.send('Car not found!');
+  }
+});
 
 // Dados do carro
 const carro = new Carro('Marca', 'preco', 'localizacao', 'descricao,imagem');
