@@ -3,26 +3,8 @@ var app = express();
 const connection = require("./models/db");
 const bodyParser = require("body-parser");
 const cadastro = require("./models/cadastro");
-const sequelize = require("sequelize");
-const path = require("path");
-const session = require("express-session");
-const bcrypt = require("bcryptjs");
-const userauth = require("./middlewares/userauth");
 const Carro = require('./poo.js');
-
-const ejs = require('ejs');
 const fs = require('fs');
-
-
-ejs.renderFile('info.ejs', { carro: carroEncontrado }, {}, (err, str) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-
-  fs.writeFileSync('info.html', str);
-  console.log('Arquivo HTML gerado com sucesso!');
-});
 
 // Dados do carro
 const carro = new Carro('Marca', 'preco', 'localizacao', 'descricao,imagem');
@@ -46,7 +28,7 @@ fileNames.forEach(fileName => {
     const data = { carro: carro, errorMessage: '' }; // Passa o objeto 'carro' como propriedade 'carro' no objeto de dados 'data'
 
     // Renderização do arquivo EJS em HTML
-    const html = ejs.render(template, data);
+    const html = template; // O conteúdo do arquivo EJS é considerado como HTML estático
 
     // Nome do arquivo HTML a ser salvo
     const htmlFileName = fileName.replace('.ejs', '.html');
@@ -64,15 +46,12 @@ fileNames.forEach(fileName => {
   }
 });
 
-
 // Configurando a sessão do usuário
 app.use(session({
-
   cookie: { maxAge: 10000000000000000000 },
   secret: 'mySecret',
   resave: false,
   saveUninitialized: true
-
 }));
 
 // Configurando o template engine EJS e a pasta de arquivos estáticos
@@ -95,18 +74,17 @@ app.get('/carro2', (req, res) => {
 
 
 
-// Rota inicial
-app.get("/", (req, res) => {
-  res.render("index");
-});
-app.get('/cadastro', (req, res) => {
-  res.render('cadastro', { errorMessage: null }); 
-});
-
-//logica para buscar um carro que esta no poo.js
+// Criação dos objetos Carro
 const carro1 = new Carro('Fusca', 'R$ 45.000', 'Rio de Janeiro', ['Um clássico em excelente estado de conservação.'], '../assets/carro3.png');
 const carro2 = new Carro('Chevette', 'R$ 65.433', 'Santiago', ['Sed facilisis nisi ac dolor gravida consequat.'], '../assets/carro1.webp');
 
+app.get('/', (req, res) => {
+  res.render('index', { carro: carro1 });
+});
+
+app.get('/carro2', (req, res) => {
+  res.render('index', { carro: carro2 });
+});
 
 app.get('/info', (req, res) => {
   const searchTerm = req.query.searchTerm;
@@ -117,12 +95,11 @@ app.get('/info', (req, res) => {
     carroEncontrado = carro2;
   }
   if (carroEncontrado) {
-    res.render('info.ejs', { carro: carroEncontrado, imagemUrl: carroEncontrado.getImagem() });
+    res.render('info', { carro: carroEncontrado, imagemUrl: carroEncontrado.getImagem() });
   } else {
     res.send('Car not found!');
   }
 });
-
 
 
 
