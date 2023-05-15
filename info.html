@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=], initial-scale=1.0">
-<link rel="stylesheet" href="public/info.css">
+    <link rel="stylesheet" href="public/info.css">
     <title>Info Carro</title>
 </head>
 <body>
@@ -23,32 +23,32 @@
             <form action="/info" method="get">
               <div class="input-group">
                 <input type="text" name="searchTerm" id="textBusca" placeholder="Buscar...">
-                <button type="submit" class="btn" style="background-image: url"public/assets/researchicon.png'"></button>
+                <button type="submit" class="btn" style="background-image: url("public/assets/researchicon.png"></button>
               </div>
             </form>
           </div>
     </header>
     <main>
         <div class="centro__info">
-            <img src="/imagens/">
+            <img src="/imagens/<%= carro.imagem %>">
             <div class="centro__texto">
-                <h1>Marca<h1>    
+                <h1><%= carro.getMarca() %><h1>    
             </div>
         </div>
         <section class="espaco" style="height: 50px;"></section>
         <section style="height: 50px;"></section>
         <div class="barra_de_detalhes">
             <div class="bloco">
-                <h4 class="texto__rapido1">Marca</h4>  <h3 class="texto__rapido2">Marca</h3>
+                <h4 class="texto__rapido1">Marca</h4>  <h3 class="texto__rapido2"><%= carro.getMarca() %></h3>
                 
             </div>
             <section class="linha" style="width: 3px; height: 50px;"></section>
             <div class="bloco">
-                <h4 class="texto__rapido1">Preço</h4> <h3 class="texto__rapido2">preco</h3>
+                <h4 class="texto__rapido1">Preço</h4> <h3 class="texto__rapido2"><%= carro.getPreco() %></h3>
             </div>
             <section class="linha" style="width: 3px; height: 50px;"></section>
             <div class="bloco">
-                <h4 class="texto__rapido1">Local</h4> <h3 class="texto__rapido2">localizacao</h3>
+                <h4 class="texto__rapido1">Local</h4> <h3 class="texto__rapido2"><%= carro.getLocalizacao() %></h3>
             </div>
         </div>
         <section style="height: 200px;"></section>
@@ -56,7 +56,7 @@
          
             <ul  class="main__paragraphs">
                
-                <p>descricao,imagem</p>
+                <p><%= carro.getDescricao() %></p>
             </ul>
           
             <P class="main__paragraphs">
@@ -110,14 +110,3 @@
     let prevScrollpos = window.pageYOffset;
 
 window.onscroll = function() {
-  const currentScrollPos = window.pageYOffset;
-  
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector('.cabecalho').classList.remove('hidden');
-  } else {
-    document.querySelector('.cabecalho').classList.add('hidden');
-  }
-  
-  prevScrollpos = currentScrollPos;
-}
-</script>
