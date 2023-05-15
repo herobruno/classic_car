@@ -94,7 +94,7 @@ app.get('/info', (req, res) => {
   }
 
   if (carroEncontrado) {
-    res.render('info.ejs', { carro: carroEncontrado, imagemUrl: carroEncontrado.getImagem() });
+    res.render('info', { carro: carroEncontrado, imagemUrl: carroEncontrado.getImagem() });
   } else {
     res.send('Car not found!');
   }
