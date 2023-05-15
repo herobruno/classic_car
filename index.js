@@ -54,7 +54,6 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// Configurando o template engine EJS e a pasta de arquivos estáticos
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
@@ -62,22 +61,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Criação dos objetos Carro
-app.get('/', (req, res) => {
-  res.render('index', { carro: carro1 });
-});
-
-app.get('/carro2', (req, res) => {
-  res.render('index', { carro: carro2 });
-});
-
-
-
-
-// Criação dos objetos Carro
-const carro1 = new Carro('Fusca', 'R$ 45.000', 'Rio de Janeiro', ['Um clássico em excelente estado de conservação.'], '../assets/carro3.png');
-const carro2 = new Carro('Chevette', 'R$ 65.433', 'Santiago', ['Sed facilisis nisi ac dolor gravida consequat.'], '../assets/carro1.webp');
-
+// Rota inicial
 app.get('/', (req, res) => {
   res.render('index', { carro: carro1 });
 });
@@ -100,7 +84,6 @@ app.get('/info', (req, res) => {
     res.send('Car not found!');
   }
 });
-
 
 
 
