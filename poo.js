@@ -31,8 +31,8 @@ class Carro {
   }
 }
   
-const carro1 = new Carro('Fusca', 'R$ 45.000', 'Rio de Janeiro', ['Um clássico em excelente estado de conservação.'], '../public/assets/carro3.png');
-const carro2 = new Carro('Chevette', 'R$ 65.433', 'Santiago', ['Sed facilisis nisi ac dolor gravida consequat.'], '../public/assets/carro1.webp');
+const carro1 = new Carro('Fusca', 'R$ 45.000', 'Rio de Janeiro', ['Um clássico em excelente estado de conservação.'], '../assets/carro3.png');
+const carro2 = new Carro('Chevette', 'R$ 65.433', 'Santiago', ['Sed facilisis nisi ac dolor gravida consequat.'], '../assets/carro1.webp');
   
   // Exportação da classe para ser utilizada em outros arquivos
   module.exports = Carro;
